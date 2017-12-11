@@ -23,10 +23,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="29dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Username" />
+        android:hint="Username"
+        android:inputType="textPersonName" />
 
     <EditText
 
@@ -35,39 +35,45 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/etUsername"
         android:layout_below="@+id/etUsername"
-        android:layout_marginTop="58dp"
+        android:layout_marginTop="19dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Password" />
+        android:hint="Password"
+        android:inputType="textPersonName" />
 
     <Button
-        android:onClick="btnCreateClick"
         android:id="@+id/btnCreate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/etPassword"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="36dp"
+        android:onClick="btnCreateClick"
         android:text="Create" />
 
     <Button
-        android:onClick="btnSelectClick"
         android:id="@+id/btnSelect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/btnCreate"
         android:layout_below="@+id/btnCreate"
-        android:layout_marginTop="15dp"
+        android:onClick="btnSelectClick"
         android:text="Select" />
 
     <Button
         android:id="@+id/btnLauch"
-        android:onClick="btnLauchActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnSelect"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
+        android:onClick="btnLauchActivity"
         android:text="Launch Another" />
+
+    <Button
+        android:id="@+id/btnAsync"
+        android:onClick="btnAsyncLaunch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btnSelect"
+        android:layout_below="@+id/btnLauch"
+        android:text="Async Task" />
 
 </RelativeLayout>

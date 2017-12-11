@@ -3,6 +3,7 @@ package com.heavenlyhell.sqlitedemo;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -27,6 +28,7 @@ public class SharedPrefActivity extends AppCompatActivity {
     TextView tvSpMessage, tvResult;
 
     List<Person> persons;
+    private static final String TAG = "com.heavenlyhell";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,19 +87,22 @@ public class SharedPrefActivity extends AppCompatActivity {
     }
 
     public void writeToTheFile() {
-        StringBuilder stringBuilder = new StringBuilder();
-        for (Person person : persons) {
-            stringBuilder.append(person.getFirstName() + "," + person.getLastName() + "\n");
-        }
-
         try {
             FileOutputStream fos = openFileOutput("file.txt", MODE_PRIVATE);
-            BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(fos));
-            bufferedWriter.write(stringBuilder.toString());
-
-        } catch (IOException e) {
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fos);
+            for (Person person : persons) {
+                outputStreamWriter.append(person.getFirstName()+","+person.getLastName()+"\n");
+            }
+            outputStreamWriter.flush();
+            outputStreamWriter.close();
+            fos.close();
+            Message.displayMessage(this, "Write Successful !!");
+        }  catch (IOException e) {
             e.printStackTrace();
         }
+
+
+
     }
 
 
@@ -123,6 +128,7 @@ public class SharedPrefActivity extends AppCompatActivity {
 
                 persons.add(person);
             }
+            bufferedReader.close();            fis.close();
             setToTextView(persons);
         } catch (IOException e) {
             e.printStackTrace();

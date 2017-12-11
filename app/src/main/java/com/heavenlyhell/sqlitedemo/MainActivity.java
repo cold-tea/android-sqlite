@@ -6,11 +6,13 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
     SandyDbAdapter sandyDbAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     public void btnCreateClick(View view) {
         EditText etUsername = findViewById(R.id.etUsername);
         EditText etPassword = findViewById(R.id.etPassword);
+
 
         String username = etUsername.getText().toString();
         String password = etPassword.getText().toString();
@@ -55,6 +58,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void btnLauchActivity(View view) {
         Intent intent = new Intent(this, SharedPrefActivity.class);
+        startActivity(intent);
+    }
+
+    public void btnAsyncLaunch(View view) {
+        Intent intent = new Intent(this, AsyncActivity.class);
         startActivity(intent);
     }
 }
