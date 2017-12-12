@@ -44,8 +44,8 @@
         android:id="@+id/btnCreate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btnPermission"
         android:layout_below="@+id/etPassword"
-        android:layout_centerHorizontal="true"
         android:onClick="btnCreateClick"
         android:text="Create" />
 
@@ -53,8 +53,8 @@
         android:id="@+id/btnSelect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/btnCreate"
-        android:layout_below="@+id/btnCreate"
+        android:layout_alignEnd="@+id/etPassword"
+        android:layout_below="@+id/etPassword"
         android:onClick="btnSelectClick"
         android:text="Select" />
 
@@ -69,11 +69,29 @@
 
     <Button
         android:id="@+id/btnAsync"
-        android:onClick="btnAsyncLaunch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/btnSelect"
         android:layout_below="@+id/btnLauch"
+        android:layout_centerHorizontal="true"
+        android:onClick="btnAsyncLaunch"
         android:text="Async Task" />
+
+    <Button
+        android:id="@+id/btnPermission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnAsync"
+        android:layout_centerHorizontal="true"
+        android:onClick="btnPermissionClick"
+        android:text="Permission Activity" />
+
+    <Button
+        android:id="@+id/btnSms"
+        android:onClick="btnSmsClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnPermission"
+        android:layout_centerHorizontal="true"
+        android:text="SMS" />
 
 </RelativeLayout>

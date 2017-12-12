@@ -57,21 +57,31 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btnLauchActivity(View view) {
-//        Intent intent = new Intent(this, SharedPrefActivity.class);
-//        startActivity(intent);
+        Intent intent = new Intent(this, SharedPrefActivity.class);
+        startActivity(intent);
 
-        Intent intent1 = new Intent();
+        /*Intent intent1 = new Intent();
         intent1.setAction(Intent.ACTION_SEND);
         String[] to = {"mysterious.saugat2@gmail.com"};
         intent1.putExtra(Intent.EXTRA_EMAIL, to);
         intent1.putExtra(Intent.EXTRA_SUBJECT, "Hello Dude");
         intent1.putExtra(Intent.EXTRA_TEXT, "K xa yar ... bindass ho ..");
         intent1.setType("message/rfc822");
-        startActivity(intent1);
+        startActivity(intent1);*/
     }
 
     public void btnAsyncLaunch(View view) {
         Intent intent = new Intent(this, AsyncActivity.class);
+        startActivity(intent);
+    }
+
+    public void btnPermissionClick(View view) {
+        Intent intent = new Intent(this, PermissionActivity.class);
+        startActivity(intent);
+    }
+
+    public void btnSmsClick(View view) {
+        Intent intent = new Intent(this, SmsActivity.class);
         startActivity(intent);
     }
 }
